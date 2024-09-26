@@ -1,5 +1,13 @@
 import os
- 
+
+aluno = [{'nome': 'Fernando', 'categoria': 'masculino', 'ativo':True},
+         {'nome': 'Kaua', 'categoria': 'masculino', 'ativo':True},
+         {'nome': 'Talita', 'categoria': 'femenino', 'ativo':True},
+         {'nome': 'Hellen', 'categoria': 'femenino', 'ativo':True}]
+
+def cadastrar_alunos():
+    exibir_subtitulo()
+    
 def mostra_titulo():
     print('''
           
