@@ -6,7 +6,7 @@ aluno = [{'nome': 'Fernando', 'categoria': 'masculino', 'ativo':True},
          {'nome': 'Hellen', 'categoria': 'femenino', 'ativo':True}]
 
 def exbir_subtitulo(texto):
-    os.system('clear')
+    os.system('cls')
     print(texto)
     print('')
 
@@ -46,22 +46,55 @@ def escolhe_opcao():
     except:
         opcao_invalida()
 
-def cadastrar_nadadores():
-    exbir_subtitulo('Cadastrar Nadadores')
+def cadastrar_alunos():
+    exbir_subtitulo('Cadastrar alunos')
 
 def cadastrar_alunos():
     os.system('cls')
     print('cadastrando aluno... ')
-    nome_nadador = input('Digite o nome do aluno: ')
+    nome_aluno = input('Digite o nome do aluno: ')
     alunos.append(nome_aluno)
-    print(f'(nome_aluno) foi adicionado(a) aos alunos de Foz do Iguaçu')
-    input('Digite qualquer tecla para voltar')
-    main()
+    print(f'(nome_aluno) foi adicionado(a) aos alunos da academia GymRat')
+    
+    retorna_menu_principal()
 
+def mostrar_alunos():
+    exbir_subtitulo('Listar alunos')
+
+    for aluno in alunos:
+        nome_aluno = aluno['nome']
+        categoria = aluno['categoria']
+        ativo = aluno['ativo']
+        print(f' - {nome_aluno} | {categoria} | {ativo}')
+    
+    retorna_menu_principal()
+
+def alterar_estado_aluno():
+    exbir_subtitulo('Cadastrar alunos')
+    nome_aluno = input('Qual aluno(a) você gostaria de mudar o status?')
+    aluno_encontrado = False
+
+    for aluno in alunos:
+        if nome_aluno == aluno['nome']
+            aluno_encontrado = True
+            aluno['ativo'] = not aluno['ativo']
+            mensagem = f'O {nome_aluno} foi ativado com sucesso' if aluno['ativo'] else f' O(A) {nome_aluno} foi desativado'
+
+            print(mensagem)
+    if not aluno_encontrado:
+        print('O aluno ou aluna não existe')
+
+def finalizar_programa():
+    os.system('cls')
+    print('Finalizando programa')
+
+def opcao_invalida():
+    print('Esse caracter não é permitido')
+    retorna_menu_principal()
 
 def main():
     mostra_titulo()
-    mostra_escolha()
+    mostra_escolhas()
     escolhe_opcao()
 
 if __name__ == '__main__':
